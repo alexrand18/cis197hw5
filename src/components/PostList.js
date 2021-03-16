@@ -40,13 +40,15 @@ const Post = ({
 
   return (
     <div>
-      <Card>
+      <Card border = {'primary'}>
         <Card.Body>
           {!isEditing
             && (
             <>
               <Card.Title>{`Post #${id}: ${title}`}</Card.Title>
-              <Card.Img src={image} />
+              <div style={{
+                width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'
+              }}><Card.Img src={image} style = {{width: 200, height: 200}}/></div>
               <Card.Text>{description}</Card.Text>
               <button type="button" className="btn btn-warning" onClick={() => changeIsEditing(true)}>Edit Post</button>
             </>
